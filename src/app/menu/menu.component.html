@@ -1,0 +1,15 @@
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="navbar-brand" routerLink="/login">CodeWilliam</div>
+
+        <ul class="navbar-nav">
+            <li class="nav-link" [routerLink]="'/welcome/' + getUsername()" *ngIf=loggedIn()>Home</li>
+            <li class="nav-link" routerLink="/todos" *ngIf=loggedIn()>Todos</li>
+        </ul>
+        
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li class="nav-link" routerLink="/login" *ngIf=!loggedIn()>Login</li>
+            <li class="nav-link" routerLink="/logout" *ngIf=loggedIn()>Logout</li>
+        </ul>
+    </nav>
+</header>
